@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Form</title>
+    <link rel="stylesheet" href="{% static 'text_to_func/css/homepage.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="input1" placeholder="Enter text" required>
+            <input type="text" name="input2" placeholder="Enter text" required>
+            <button type="submit">Submit</button><button type="reset">Reset</button>
+        </form>
+
+        {% if answer %}
+            <div class="answer-box">
+                <strong>Your input:</strong> {{ answer }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9c8aa9;
+    padding: 40px;
+}
+
+/* Form container */
+.form-container {   
+    background-color: #545451;
+    padding: 25px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Input fields */
+input[type="text"] {
+    display: block;
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Button row */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+/* Button styles */
+.button-row button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit button */
+button[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #2d89ef;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #1b5fc0;
+}
+
+/* Reset button */
+button[type="reset"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button[type="reset"]:hover {
+    background-color: #c0392b;
+}
+
+/* Answer display box */
+.answer-box {
+    margin-top: 20px;
+    background: #e0f7e9;
+    padding: 15px;
+    border: 1px solid #b6e2c5;
+    border-radius: 6px;
+    font-size: 16px;
+}
