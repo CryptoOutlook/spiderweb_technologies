@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Input Form</title>
-    <link rel="stylesheet" href="static/css/homepage.css">
+    <title>Tab {{ title }}</title>
+    <link rel="stylesheet" href="/static/css/homepage.css">
 </head>
 <body>
     <div class="form-container">
         <form method="post">
-            {% csrf_token %}
+            
             <input type="text" name="input1" placeholder="Enter text" required>
             <input type="text" name="input2" placeholder="Enter text" required>
             <div class="button-row">
