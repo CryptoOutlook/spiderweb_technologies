@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'text_to_func',
+    'text_to_func', # APP 1
+    'channels', # Web sockets
 ]
 
 MIDDLEWARE = [
@@ -72,8 +73,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'spiderweb_technologies.wsgi.application'
+# WSGI_APPLICATION = 'spiderweb_technologies.wsgi.application'
 
+ASGI_APPLICATION = 'spiderweb_technologies.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -126,6 +128,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
+    BASE_DIR / 'text_to_func' / 'static',
 
 ]
 # Default primary key field type
