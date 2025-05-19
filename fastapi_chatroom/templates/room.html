@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastAPI Chat Room</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        #chat-box { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; }
+        input[type="text"] { width: 80%; padding: 8px; }
+        button { padding: 8px 16px; }
+        #login { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h2>FastAPI WebSocket Chat</h2>
+    <div id="login">
+        <input type="text" id="username" placeholder="Enter your name" />
+        <button onclick="joinChat()">Join Chat</button>
+    </div>
+    <div id="chat" style="display: none;">
+        <div id="chat-box"></div>
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        let ws;
+
+        function joinChat() {
+            const username = document.getElementById("username").value.trim();
+            if (!username) return alert("Please enter a username.");
+            ws = new WebSocket(`ws://${location.host}/ws/${encodeURIComponent(username)}`);
+
+            ws.onmessage = function(event) {
+                const msg = document.createElement("div");
+                msg.textContent = event.data;
+                document.getElementById("chat-box").appendChild(msg);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            };
+
+            document.getElementById("login").style.display = "none";
+            document.getElementById("chat").style.display = "block";
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("messageInput");
+            if (input.value.trim() !== "") {
+                ws.send(input.value);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

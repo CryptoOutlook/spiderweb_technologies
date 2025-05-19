@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'text_to_func', # APP 1
     'channels', # Web sockets
+    'ai_chatbot', # AI Chatbot app
+
+    
+    'chat', # test ap from chatgpt
 ]
 
 MIDDLEWARE = [
@@ -61,6 +65,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR / 'text_to_func' / 'templates',
+            BASE_DIR / 'ai_chatbot' / 'templates',
+            BASE_DIR / 'chat' / 'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
